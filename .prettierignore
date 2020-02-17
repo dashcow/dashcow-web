@@ -1,3 +1,17 @@
-/build/
-/node_modules/
-/public/
+# dependencies
+node_modules/
+
+# assets
+public/
+assets/
+
+# testing
+coverage/
+
+# production
+build/
+static/
+
+# storybook
+storybook-static/
+out[0-9]*/
