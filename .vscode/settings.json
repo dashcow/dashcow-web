@@ -6,7 +6,6 @@
     "typescriptreact"
   ],
   "stylelint.enable": true,
-  "typescript.validate.enable": false,
   "css.validate": false,
   "less.validate": false,
   "scss.validate": false,
