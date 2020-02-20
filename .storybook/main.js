@@ -16,5 +16,6 @@ module.exports = {
     '@storybook/addon-knobs',
     '@storybook/addon-storysource',
     '@storybook/addon-viewport',
+    '@storybook/preset-typescript',
   ],
 };
