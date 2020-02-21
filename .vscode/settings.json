@@ -6,12 +6,12 @@
     "typescriptreact"
   ],
   "stylelint.enable": true,
-  "typescript.validate.enable": false,
   "css.validate": false,
   "less.validate": false,
   "scss.validate": false,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
     "source.fixAll": true
-  }
+  },
+  "editor.formatOnSave": true
 }
