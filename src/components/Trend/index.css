@@ -1,0 +1,18 @@
+.trend__triangle {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-right: 2px;
+  vertical-align: middle;
+  border-style: solid;
+}
+
+.trend__triangle--up {
+  border-color: transparent transparent #3f8600 transparent;
+  border-width: 0 6px 8px 6px;
+}
+
+.trend__triangle--down {
+  border-color: #cf1322 transparent transparent transparent;
+  border-width: 8px 6px 0 6px;
+}
