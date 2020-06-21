@@ -1,0 +1,22 @@
+section.app-layout {
+  min-height: 100vh;
+}
+
+header.app-layout__header {
+  padding: 0;
+  background-color: white;
+}
+
+.app-layout__header__trigger {
+  padding: 0 24px;
+  font-size: 18px;
+  line-height: 64px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.app-layout__content {
+  margin: 24px 16px;
+  padding: 24px;
+  background: white;
+}

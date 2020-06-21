@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ant-design/icons": "^4.1.0",
     "@testing-library/jest-dom": "^5.7.0",
     "@testing-library/react": "^10.2.1",
     "@testing-library/user-event": "^12.0.6",
@@ -16,6 +17,7 @@
     "customize-cra": "^0.9.1",
     "date-fns": "^2.13.0",
     "husky": "^4.2.5",
+    "jest-environment-jsdom-sixteen": "^1.0.3",
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
     "react": "^16.13.0",
@@ -28,8 +30,8 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "test": "react-app-rewired test",
-    "test:nowatch": "react-app-rewired test --watchAll=false",
+    "test": "react-app-rewired test --env=jest-environment-jsdom-sixteen",
+    "test:nowatch": "react-app-rewired test --env=jest-environment-jsdom-sixteen --watchAll=false",
     "lint:es": "./node_modules/.bin/eslint --ext=ts --ext=tsx --ext=js --ext=jsx . --ignore-path .eslintignore",
     "lint:style": "./node_modules/.bin/stylelint --config=.stylelintrc.json '**/*.css' '**/*.scss' '**/*.sass' '**/*.less'",
     "lint": "run-s lint:*",
