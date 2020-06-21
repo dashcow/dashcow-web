@@ -22,7 +22,7 @@ export const WithTitlePrimaryButton = () => (
       icon: <b>+ </b>,
       loading: boolean('loading', false, 'primaryButton'),
       disabled: boolean('disabled', false, 'primaryButton'),
-      onClick: action('onPrimaryButtonClicked'),
+      onClick: action('onPrimaryButtonClick'),
     }}
   ></PageTitle>
 );
@@ -35,7 +35,7 @@ export const WithTitlePrimarySecondaryButton = () => (
       icon: <b>+ </b>,
       loading: boolean('loading', false, 'primaryButton'),
       disabled: boolean('disabled', false, 'primaryButton'),
-      onClick: action('onPrimaryButtonClicked'),
+      onClick: action('onPrimaryButtonClick'),
     }}
     secondaryButtons={[
       {
@@ -43,14 +43,14 @@ export const WithTitlePrimarySecondaryButton = () => (
         icon: <b>+ </b>,
         loading: boolean('loading', false, 'secondaryButton1'),
         disabled: boolean('disabled', false, 'secondaryButton1'),
-        onClick: action('onSecondaryButton1Clicked'),
+        onClick: action('onSecondaryButton1Click'),
       },
       {
         text: text('text', 'Cow', 'secondaryButton2'),
         icon: <b>+ </b>,
         loading: boolean('loading', false, 'secondaryButton2'),
         disabled: boolean('disabled', false, 'secondaryButton2'),
-        onClick: action('onSecondaryButton2Clicked'),
+        onClick: action('onSecondaryButton2Click'),
       },
     ]}
   ></PageTitle>
@@ -76,7 +76,7 @@ export const WithBreadcrumbPrimaryButton = () => (
       icon: <b>+ </b>,
       loading: boolean('loading', false, 'primaryButton'),
       disabled: boolean('disabled', false, 'primaryButton'),
-      onClick: action('onPrimaryButtonClicked'),
+      onClick: action('onPrimaryButtonClick'),
     }}
     secondaryButtons={[
       {
@@ -84,14 +84,14 @@ export const WithBreadcrumbPrimaryButton = () => (
         icon: <b>+ </b>,
         loading: boolean('loading', false, 'secondaryButton1'),
         disabled: boolean('disabled', false, 'secondaryButton1'),
-        onClick: action('onSecondaryButton1Clicked'),
+        onClick: action('onSecondaryButton1Click'),
       },
       {
         text: text('text', 'Cow', 'secondaryButton2'),
         icon: <b>+ </b>,
         loading: boolean('loading', false, 'secondaryButton2'),
         disabled: boolean('disabled', false, 'secondaryButton2'),
-        onClick: action('onSecondaryButton2Clicked'),
+        onClick: action('onSecondaryButton2Click'),
       },
     ]}
   ></PageTitle>

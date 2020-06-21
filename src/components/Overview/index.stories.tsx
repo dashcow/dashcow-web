@@ -60,8 +60,8 @@ export const withMultipleStatistics = () => {
       value: text('value', '40 ml'),
       prefix: text('prefix', '🥛'),
       suffix: text('suffix', '/ week'),
-      onTitleClick: action('onTitleClicked'),
-      onStatisticClick: action('onStatisticClicked'),
+      onTitleClick: action('onTitleClick'),
+      onStatisticClick: action('onStatisticClick'),
     });
   }
   return <Overview statistics={statistics}></Overview>;
