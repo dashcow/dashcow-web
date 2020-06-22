@@ -1,12 +1,13 @@
 import React from 'react';
-import { Chart, Geom, Tooltip, ChartProps, GeomProps } from 'bizcharts';
+import { Chart, Geom, Tooltip } from 'bizcharts';
+import { IChartProps, IBaseGemoProps } from 'bizcharts/lib/interface';
 
 interface SimpleAreaChartProps {
-  data: ChartProps['data'];
-  height: ChartProps['height'];
-  padding: ChartProps['padding'];
-  position: GeomProps['position'];
-  color: GeomProps['color'];
+  data: IChartProps['data'];
+  height: IChartProps['height'];
+  padding: IChartProps['padding'];
+  position: IBaseGemoProps['position'];
+  color: IBaseGemoProps['color'];
 }
 
 const SimpleAreaChart: React.FC<SimpleAreaChartProps> = ({
@@ -16,8 +17,8 @@ const SimpleAreaChart: React.FC<SimpleAreaChartProps> = ({
   position,
   color,
 }) => (
-  <Chart height={height} data={data} padding={padding} forceFit>
-    <Tooltip crosshairs />
+  <Chart height={height} data={data} padding={padding} forceFit pure>
+    <Tooltip showCrosshairs showMarkers />
     <Geom type="area" position={position} color={color} shape="smooth" />
     <Geom
       type="line"

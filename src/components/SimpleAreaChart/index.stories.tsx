@@ -28,7 +28,7 @@ export const AreaStatistic = () => (
   <SimpleAreaChart
     height={50}
     data={areaData}
-    padding="auto"
+    padding={12}
     position="x*y"
     color="#13c2c2"
   ></SimpleAreaChart>
