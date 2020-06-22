@@ -16,7 +16,7 @@
     "customize-cra": "^0.9.1",
     "date-fns": "^2.13.0",
     "husky": "^4.2.5",
-    "lint-staged": "^10.2.7",
+    "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
     "react": "^16.13.0",
     "react-app-rewire-eslint": "^0.2.3",
