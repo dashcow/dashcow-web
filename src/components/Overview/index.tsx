@@ -38,9 +38,11 @@ const Overview: React.FC<OverviewProps> = ({ statistics, align }) => (
         { key, title, value, prefix, suffix, onTitleClick, onStatisticClick },
         index
       ) => (
-        <div className={`statistic__block statistic__block--${align}`}>
+        <div
+          key={key || index}
+          className={`statistic__block statistic__block--${align}`}
+        >
           <Statistic
-            key={key || index}
             title={
               <OnClickWrapper onClick={onTitleClick}>{title}</OnClickWrapper>
             }
