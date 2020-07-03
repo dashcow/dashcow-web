@@ -23,6 +23,7 @@ export interface AppLayoutProps {
   content?: React.ReactNode;
   footer?: React.ReactNode;
   defaultSelectedKey?: string;
+  selectedKey?: string;
   menuItemRender?: (
     menu: AppMenuProps,
     sameLevelMenus: AppMenuProps[]
@@ -60,7 +61,7 @@ function getMenuItems(
   });
 }
 
-function findSelectedItemAncestors(
+function findMenuItemAncestors(
   selectedItemKey: string | undefined,
   menus: AppMenuProps[],
   parentMenu?: AppMenuProps
@@ -74,7 +75,7 @@ function findSelectedItemAncestors(
       ancestors.push(parentMenu.key);
     } else if (menu.submenus) {
       ancestors.push(
-        ...findSelectedItemAncestors(selectedItemKey, menu.submenus, menu)
+        ...findMenuItemAncestors(selectedItemKey, menu.submenus, menu)
       );
       if (ancestors.length && parentMenu) {
         ancestors.push(parentMenu.key);
@@ -104,24 +105,29 @@ const AppLayout: React.FC<AppLayoutProps> = ({
   content,
   footer,
   defaultSelectedKey,
+  selectedKey: selectedKeyProp,
   menuItemRender,
 }) => {
   const initialOpenedKeys: AppMenuProps['key'][] = defaultCollapsed
     ? []
-    : findSelectedItemAncestors(defaultSelectedKey, menus);
+    : findMenuItemAncestors(defaultSelectedKey, menus);
   const [openedKeys, setOpenedKeys] = useState(initialOpenedKeys);
   const [collapsed, setCollapsed] = useState(defaultCollapsed || false);
-  const [selectedKey, setSelectedKey] = useState(defaultSelectedKey);
+  const [selectedKey, setSelectedKey] = useState(
+    selectedKeyProp || defaultSelectedKey
+  );
 
   const closeAllMenus: () => void = () => {
     setOpenedKeys([]);
   };
   const openSelectedMenu: () => void = () => {
-    setOpenedKeys(findSelectedItemAncestors(selectedKey, menus));
+    setOpenedKeys(findMenuItemAncestors(selectedKey, menus));
   };
 
   const handleMenuClicked: MenuProps['onClick'] = clickParam => {
-    setSelectedKey(clickParam.key);
+    if (!selectedKeyProp) {
+      setSelectedKey(clickParam.key);
+    }
     onMenuClick && onMenuClick(clickParam);
   };
   const handleCollapseClicked: AppLayoutProps['onCollapse'] = () => {
@@ -149,6 +155,7 @@ const AppLayout: React.FC<AppLayoutProps> = ({
           mode="inline"
           onClick={handleMenuClicked}
           defaultSelectedKeys={defaultSelectedKey ? [defaultSelectedKey] : []}
+          selectedKeys={selectedKey ? [selectedKey] : undefined}
           openKeys={openedKeys}
           onOpenChange={setOpenedKeys}
         >
