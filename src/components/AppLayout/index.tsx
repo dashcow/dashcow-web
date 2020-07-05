@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Layout, Menu } from 'antd';
 import { MenuProps } from 'antd/lib/menu';
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
@@ -108,14 +108,18 @@ const AppLayout: React.FC<AppLayoutProps> = ({
   selectedKey: selectedKeyProp,
   menuItemRender,
 }) => {
-  const initialOpenedKeys: AppMenuProps['key'][] = defaultCollapsed
-    ? []
-    : findMenuItemAncestors(defaultSelectedKey, menus);
+  const [initialOpenedKeys] = useState(() =>
+    defaultCollapsed ? [] : findMenuItemAncestors(defaultSelectedKey, menus)
+  );
   const [openedKeys, setOpenedKeys] = useState(initialOpenedKeys);
   const [collapsed, setCollapsed] = useState(defaultCollapsed || false);
   const [selectedKey, setSelectedKey] = useState(
     selectedKeyProp || defaultSelectedKey
   );
+  const menuItems = useMemo(() => getMenuItems(menus, menuItemRender), [
+    menus,
+    menuItemRender,
+  ]);
 
   const closeAllMenus: () => void = () => {
     setOpenedKeys([]);
@@ -159,7 +163,7 @@ const AppLayout: React.FC<AppLayoutProps> = ({
           openKeys={openedKeys}
           onOpenChange={setOpenedKeys}
         >
-          {getMenuItems(menus, menuItemRender)}
+          {menuItems}
         </Menu>
       </Sider>
       <Layout>
