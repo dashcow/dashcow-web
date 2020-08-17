@@ -63,7 +63,7 @@
   },
   "devDependencies": {
     "@sheerun/mutationobserver-shim": "^0.3.3",
-    "@storybook/addon-a11y": "^5.3.18",
+    "@storybook/addon-a11y": "^6.0.12",
     "@storybook/addon-actions": "^6.0.12",
     "@storybook/addon-knobs": "^6.0.12",
     "@storybook/addon-links": "^6.0.12",
