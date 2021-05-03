@@ -83,7 +83,7 @@
     "storybook": "^6.2.9",
     "stylelint": "^13.13.1",
     "stylelint-config-rational-order": "^0.1.2",
-    "stylelint-config-standard": "^21.0.0",
+    "stylelint-config-standard": "^22.0.0",
     "stylelint-order": "^4.1.0",
     "stylelint-webpack-plugin": "^2.1.1",
     "ts-loader": "^9.1.1"
