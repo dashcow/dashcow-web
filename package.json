@@ -13,7 +13,7 @@
     "@types/react-dom": "^17.0.9",
     "antd": "^4.3.4",
     "babel-plugin-import": "^1.13.3",
-    "bizcharts": "^4.1.10",
+    "bizcharts": "^4.1.11",
     "customize-cra": "^1.0.0",
     "date-fns": "^2.22.1",
     "husky": "^7.0.0",
