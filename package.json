@@ -73,7 +73,7 @@
     "@storybook/preset-ant-design": "0.0.1",
     "@storybook/preset-create-react-app": "^3.2.0",
     "@storybook/preset-typescript": "^3.0.0",
-    "@storybook/react": "^6.3.4",
+    "@storybook/react": "^6.3.6",
     "@storybook/storybook-deployer": "^2.8.10",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-react": "^7.24.0",
